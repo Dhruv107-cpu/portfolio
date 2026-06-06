@@ -135,6 +135,66 @@
   .container-wide {
     @apply mx-auto max-w-7xl;
   }
+
+  .hero-name {
+    font-size: clamp(3.5rem, 14vw, 9rem);
+    line-height: 0.92;
+    letter-spacing: -0.04em;
+  }
+
+  .hero-name-char {
+    text-shadow: 0 0 80px rgba(99, 102, 241, 0.25);
+  }
+
+  .animated-border {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .animated-border::after {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: conic-gradient(
+      from var(--border-angle, 0deg),
+      rgba(99, 102, 241, 0.6),
+      rgba(139, 92, 246, 0.2),
+      rgba(99, 102, 241, 0.05),
+      rgba(139, 92, 246, 0.4),
+      rgba(99, 102, 241, 0.6)
+    );
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    z-index: -1;
+    animation: border-rotate 4s linear infinite;
+  }
+
+  .animated-border:hover::after {
+    opacity: 1;
+  }
+
+  @property --border-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+
+  @keyframes border-rotate {
+    to {
+      --border-angle: 360deg;
+    }
+  }
 }
 
 /* Reduced motion */

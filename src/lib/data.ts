@@ -1,5 +1,6 @@
 export const siteConfig = {
   name: "Dhruv Gupta",
+  displayName: "DHRUV GUPTA",
   title: "Dhruv Gupta | AI Engineer & Product Builder",
   description:
     "AI Engineer and software developer building intelligent products. B.Tech CSE AIML student, startup builder, and future ML engineer.",
@@ -7,11 +8,13 @@ export const siteConfig = {
   email: "dhruvgupt2005@gmail.com",
   linkedin: "https://linkedin.com/in/dhruv-gupta",
   github: "https://github.com/dhruv-gupta",
+  resumePath: "/resume/Dhruv_Gupta_Resume.pdf",
+  profileImage: "/profile/profile.jpg",
+  heroRoles: ["AI Engineer", "Software Developer", "Startup Builder"],
   roles: [
     "AI Engineer",
-    "Full Stack Developer",
+    "Software Developer",
     "Startup Builder",
-    "Problem Solver",
   ],
 };
 
@@ -59,6 +62,8 @@ export type Project = {
   github: string;
   demo: string;
   gradient: string;
+  image: string;
+  featured?: boolean;
 };
 
 export const projects: Project[] = [
@@ -80,6 +85,8 @@ export const projects: Project[] = [
     github: "https://github.com/dhruv-gupta/verifresh",
     demo: "https://verifresh.demo",
     gradient: "from-emerald-500/20 to-cyan-500/20",
+    image: "/projects/verifresh.svg",
+    featured: true,
   },
   {
     id: "legal-ai",
@@ -99,6 +106,7 @@ export const projects: Project[] = [
     github: "https://github.com/dhruv-gupta/legal-ai",
     demo: "https://legal-ai.demo",
     gradient: "from-violet-500/20 to-purple-500/20",
+    image: "/projects/legal-ai.svg",
   },
   {
     id: "echo",
@@ -118,6 +126,7 @@ export const projects: Project[] = [
     github: "https://github.com/dhruv-gupta/echo",
     demo: "https://echo.demo",
     gradient: "from-blue-500/20 to-indigo-500/20",
+    image: "/projects/echo.svg",
   },
   {
     id: "tweet-engine",
@@ -137,6 +146,7 @@ export const projects: Project[] = [
     github: "https://github.com/dhruv-gupta/ai-tweet-engine",
     demo: "https://tweet-engine.demo",
     gradient: "from-amber-500/20 to-orange-500/20",
+    image: "/projects/tweet-engine.svg",
   },
   {
     id: "pdf-rag",
@@ -156,6 +166,101 @@ export const projects: Project[] = [
     github: "https://github.com/dhruv-gupta/pdf-rag",
     demo: "https://pdf-rag.demo",
     gradient: "from-rose-500/20 to-pink-500/20",
+    image: "/projects/pdf-rag.svg",
+  },
+];
+
+export type CredibilityStat = {
+  label: string;
+  value: number;
+  suffix: string;
+  description: string;
+};
+
+export const credibilityStats: CredibilityStat[] = [
+  {
+    label: "Certifications",
+    value: 10,
+    suffix: "+",
+    description: "Industry credentials across AI, cloud, and software engineering",
+  },
+  {
+    label: "AI Projects",
+    value: 5,
+    suffix: "+",
+    description: "Production-grade AI applications shipped end-to-end",
+  },
+  {
+    label: "DSA Problems Solved",
+    value: 100,
+    suffix: "+",
+    description: "Consistent practice building algorithmic problem-solving depth",
+  },
+  {
+    label: "Hackathons",
+    value: 2,
+    suffix: "+",
+    description: "Rapid prototyping and team collaboration under pressure",
+  },
+];
+
+export type Certification = {
+  id: string;
+  title: string;
+  organization: string;
+  date: string;
+  image: string;
+  credentialUrl: string;
+};
+
+export const certifications: Certification[] = [
+  {
+    id: "aws-cloud",
+    title: "AWS Cloud Practitioner",
+    organization: "Amazon Web Services",
+    date: "2024",
+    image: "/certifications/aws-cloud.svg",
+    credentialUrl: "https://www.credly.com",
+  },
+  {
+    id: "google-ml",
+    title: "Machine Learning Specialization",
+    organization: "Google / Coursera",
+    date: "2024",
+    image: "/certifications/google-ml.svg",
+    credentialUrl: "https://www.coursera.org",
+  },
+  {
+    id: "ibm-ai",
+    title: "AI Engineering Professional",
+    organization: "IBM",
+    date: "2024",
+    image: "/certifications/ibm-ai.svg",
+    credentialUrl: "https://www.credly.com",
+  },
+  {
+    id: "meta-frontend",
+    title: "Front-End Developer",
+    organization: "Meta",
+    date: "2023",
+    image: "/certifications/meta-frontend.svg",
+    credentialUrl: "https://www.coursera.org",
+  },
+  {
+    id: "deeplearning-ai",
+    title: "Deep Learning Specialization",
+    organization: "DeepLearning.AI",
+    date: "2024",
+    image: "/certifications/deeplearning-ai.svg",
+    credentialUrl: "https://www.deeplearning.ai",
+  },
+  {
+    id: "python-data",
+    title: "Python for Data Science",
+    organization: "IBM",
+    date: "2023",
+    image: "/certifications/python-data.svg",
+    credentialUrl: "https://www.credly.com",
   },
 ];
 
@@ -237,38 +342,13 @@ export const experiences = [
   },
 ];
 
-export const achievements = [
-  {
-    label: "Hackathons Participated",
-    value: 12,
-    suffix: "+",
-    description: "Built innovative solutions under intense time constraints",
-  },
-  {
-    label: "AI Projects Shipped",
-    value: 8,
-    suffix: "+",
-    description: "End-to-end AI applications from concept to deployment",
-  },
-  {
-    label: "Technologies Mastered",
-    value: 20,
-    suffix: "+",
-    description: "Across frontend, backend, AI/ML, and cloud ecosystems",
-  },
-  {
-    label: "Open Source Contributions",
-    value: 15,
-    suffix: "+",
-    description: "Active contributor to developer and AI communities",
-  },
-];
-
 export const navLinks = [
   { href: "#about", label: "About" },
+  { href: "#credibility", label: "Achievements" },
   { href: "#projects", label: "Projects" },
   { href: "#skills", label: "Skills" },
   { href: "#experience", label: "Experience" },
-  { href: "#achievements", label: "Achievements" },
+  { href: "#certifications", label: "Certifications" },
+  { href: "#resume", label: "Resume" },
   { href: "#contact", label: "Contact" },
 ];
