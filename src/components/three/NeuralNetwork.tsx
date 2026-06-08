@@ -60,10 +60,15 @@ export function NeuralNetwork() {
   return (
     <group ref={groupRef}>
       {lineGeometries.map((geometry, i) => (
-        <line key={`edge-${i}`} geometry={geometry}>
-          <lineBasicMaterial color="#6366f1" transparent opacity={0.25} />
-        </line>
-      ))}
+  <lineSegments key={`edge-${i}`}>
+    <primitive attach="geometry" object={geometry} />
+    <lineBasicMaterial
+      color="#6366f1"
+      transparent
+      opacity={0.25}
+    />
+  </lineSegments>
+))}
       {nodes.map((pos, i) => (
         <mesh key={`node-${i}`} position={pos}>
           <sphereGeometry args={[0.06, 8, 8]} />
