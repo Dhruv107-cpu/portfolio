@@ -7,7 +7,7 @@ export const siteConfig = {
   url: "https://dhruvgupta.dev",
   email: "dhruvgupt2005@gmail.com",
   linkedin: "https://linkedin.com/in/dhruv-gupta",
-  github: "https://github.com/dhruv-gupta",
+  github: "D:\PORTFOLIO\public\resume\Dhruv_updated_resume (1).pdf",
   resumePath: "resume/Dhruv_updated_resume (1).pdf",
   profileImage: "/profile/profile.jpg",
   heroRoles: ["AI Engineer", "Software Developer", "Startup Builder"],
