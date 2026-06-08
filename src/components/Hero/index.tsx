@@ -73,7 +73,7 @@ function RotatingRoles() {
       </span>
       <motion.span
         animate={{ opacity: [1, 0, 1] }}
-        transition={{ repeat: Infinity, duration: 1, ease: "steps(2)" }}
+        transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
         className="hidden h-6 w-0.5 bg-accent sm:block"
         aria-hidden="true"
       />
