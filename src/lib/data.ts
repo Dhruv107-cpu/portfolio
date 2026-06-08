@@ -203,6 +203,7 @@ export const credibilityStats: CredibilityStat[] = [
     description: "Rapid prototyping and team collaboration under pressure",
   },
 ];
+export const achievements = credibilityStats;
 
 export type Certification = {
   id: string;
